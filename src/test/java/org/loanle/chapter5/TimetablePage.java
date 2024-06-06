@@ -24,7 +24,7 @@ public class TimetablePage {
 
     String bookTicketPage = "//tr[td[text()='%s' and following-sibling::td[text()='%s']]]//a[contains(@href, 'BookTicketPage')]";
     String checkPriceLink = "//tr[td[text()='%s' and following-sibling::td[text()='%s']]]//a[contains(@href, 'TicketPricePage')]";
-    String seatTypeLink = "//td[text()='Soft seat']/following-sibling::td//a[contains(@href, 'BookTicketPage')]";
+    String seatTypeLink = "//td[text()='%s']/following-sibling::td//a[contains(@href, 'BookTicketPage')]";
     String dateDate = "//select[@name='Date']//option[text()='%s']";
 
 
