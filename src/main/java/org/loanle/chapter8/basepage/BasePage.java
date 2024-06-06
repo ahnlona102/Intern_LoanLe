@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeClass;
 import java.time.Duration;
 
 
-public class baseSetup {
+public class BasePage {
     private WebDriver driver;
     static String driverPath = "resources\\driver";
     String navigatePage = "//a[.='%s']";
