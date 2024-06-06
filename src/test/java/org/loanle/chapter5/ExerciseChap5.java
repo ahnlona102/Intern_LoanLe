@@ -1,7 +1,6 @@
 package org.loanle.chapter5;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class ExerciseChap5 {
@@ -32,20 +31,17 @@ public class ExerciseChap5 {
         //Step 6. Click on “book ticket”
         TimetablePage timetablePage = new TimetablePage(driver);
         timetablePage.gototimetablepage();
-        WebElement checkPricebtn = timetablePage.checkPrice("Sài Gòn", "Đà Nẵng");
-        checkPricebtn.click();
-        WebElement checkSeatbtn = timetablePage.checkSeat("Soft seat");
-        checkSeatbtn.click();
-        timetablePage.selectDepartDate(7);
+        timetablePage.checkPrice("Sài Gòn", "Đà Nẵng");
+        timetablePage.checkSeat("Soft seat");
+        timetablePage.selectDepartDate();
         timetablePage.selectAmountTicket(2);
-        timetablePage.bookTicketbtn();
+        timetablePage.bookTicket();
 
         //Expected: Ticket booked successfully!” is shown with corrected ticket info
         SuccessPage successPage = new SuccessPage(driver);
         successPage.checkSuccessMessage("Ticket booked successfully!");
-        successPage.checkInformation("Sài Gòn", "Đà Nẵng", "Soft seat", "6/12/2024", 2);
+        successPage.checkInformation("Sài Gòn", "Đà Nẵng", "Soft seat", "6/13/2024", 2);
         driver.quit();
-
 
     }
 }
